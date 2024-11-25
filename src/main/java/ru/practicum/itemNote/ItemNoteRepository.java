@@ -14,8 +14,8 @@ public interface ItemNoteRepository extends JpaRepository<ItemNote, Long> {
     @Query("select iNote " +
             "from ItemNote as iNote " +
             "join iNote.item as item " +
-            "join item.tags as tags " +
-            "where ?1 member of tags " +
-            "and where item.userId = ?2;")
+            "where ?1 member of item.tags " +
+            "and where item.userId = ?2")
     List<ItemNote> getItemNotesByTag(String tag, Long userId);
 }
+
