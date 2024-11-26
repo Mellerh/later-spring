@@ -17,7 +17,7 @@ public class ItemNote {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "item_id")
     private Item item;
 
@@ -25,7 +25,6 @@ public class ItemNote {
     private String text;
 
     @Column(name = "registration_date")
-    private Instant registrationDate = Instant.now();
-
+    private Instant dateOfNote = Instant.now();
 }
 

@@ -23,7 +23,7 @@ public class ItemNoteMapper {
         String dateOfNote = DateTimeFormatter
                 .ofPattern("yyyy.MM.dd hh:mm:ss")
                 .withZone(ZoneOffset.UTC)
-                .format(itemNote.getRegistrationDate());
+                .format(itemNote.getDateOfNote());
 
         return ItemNoteDto.builder()
                 .id(itemNote.getId())
